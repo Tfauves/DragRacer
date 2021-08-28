@@ -4,10 +4,11 @@ import com.company.Parts.Engine;
 
 public class Car extends Vehicle {
     private Engine engine;
+    private String type;
 
-    public Car(int maxSpeed, int power, int accelerationRate, int brakingAbility, int speedometer) {
+    public Car(int maxSpeed, int power, int accelerationRate, int brakingAbility, int speedometer, String type) {
         super(maxSpeed, power, accelerationRate, brakingAbility, speedometer);
-
+        this.type = type;
     }
 
     public void start() {
@@ -28,6 +29,10 @@ public class Car extends Vehicle {
 
     public void brake() {
 
+    }
+
+    public String toString() {
+        return "Type: " + type + " " + getMaxSpeed() + " " + getPower() + " " + getAccelerationRate() + " " + getBrakingAbility() + " " + engine;
     }
 
 

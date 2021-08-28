@@ -21,7 +21,26 @@ public abstract class Vehicle {
     public abstract void coast();
     public abstract void brake();
 
+    public abstract String toString();
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
 
 
+    public int getPower() {
+        return power;
+    }
 
+    public int getAccelerationRate() {
+        return accelerationRate;
+    }
+
+    public int getBrakingAbility() {
+        return brakingAbility;
+    }
+
+    public int getSpeedometer() {
+        return speedometer;
+    }
 }
