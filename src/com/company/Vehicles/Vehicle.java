@@ -1,4 +1,9 @@
 package com.company.Vehicles;
 
-public class Vehicle {
+public abstract class Vehicle {
+    private int totalAcceleration;
+    private int power;
+    private int maxSpeed;
+
+
 }
