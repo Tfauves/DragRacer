@@ -4,6 +4,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class SpeedWay {
+    private boolean isActiveTime = false;
 //    private int timer;
 //    public Track track;
 //
@@ -23,8 +24,21 @@ public class SpeedWay {
             }
         };
 
-        public void startTimer() {
-            timeClock.scheduleAtFixedRate(distanceClock, 1000, 2000);
+        public void beginClock() {
+            isActiveTime = true;
+            if (isActiveTime) {
+                startTimer(1000);
+            }
+        }
+
+        public void stopClock() {
+            if (isActiveTime) {
+                isActiveTime = false;
+            }
+        }
+
+        public void startTimer(int period) {
+            timeClock.scheduleAtFixedRate(distanceClock, 1000, period);
         }
 
 
@@ -33,4 +47,8 @@ public class SpeedWay {
 
     }
 
+//
+//    public boolean isActiveTime() {
+//        return isActiveTime;
+//    }
 }
