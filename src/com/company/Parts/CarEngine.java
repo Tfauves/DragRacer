@@ -17,10 +17,6 @@ public class CarEngine extends Engine {
         }
     }
 
-    public void idle() {
-
-    }
-
     public void off() {
         if (isOperating) {
             isOperating = false;
@@ -29,9 +25,11 @@ public class CarEngine extends Engine {
 
     }
 
-    public void accelerate() {
-
+    public boolean getIsOperating() {
+        return isOperating;
     }
 
-
+    public void setOperating(boolean operating) {
+        isOperating = operating;
+    }
 }
