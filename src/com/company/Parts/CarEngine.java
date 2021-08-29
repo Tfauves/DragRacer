@@ -13,14 +13,14 @@ public class CarEngine extends Engine {
     public void on() {
         if (!isOperating) {
             isOperating = true;
-            System.out.println("The engine is running.");
+            System.out.println("\nThe engine is running.");
         }
     }
 
     public void off() {
         if (isOperating) {
             isOperating = false;
-            System.out.println("The engine is off.");
+            System.out.println("\nThe engine is off.");
         }
 
     }
@@ -31,5 +31,9 @@ public class CarEngine extends Engine {
 
     public void setOperating(boolean operating) {
         isOperating = operating;
+    }
+
+    public String getType() {
+        return type;
     }
 }
