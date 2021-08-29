@@ -5,13 +5,15 @@ public abstract class Vehicle {
     private int power;
     private int accelerationRate;
     private int brakingAbility;
+    private String type;
 
 
-    public Vehicle(int maxSpeed, int power, int accelerationRate, int brakingAbility) {
+    public Vehicle(int maxSpeed, int power, int accelerationRate, int brakingAbility, String type) {
         this.maxSpeed = maxSpeed;
         this.power = power;
         this.accelerationRate = accelerationRate;
         this.brakingAbility = brakingAbility;
+        this.type = type;
 
     }
 
@@ -39,5 +41,10 @@ public abstract class Vehicle {
     public int getBrakingAbility() {
         return brakingAbility;
     }
+
+    public String getType() {
+        return type;
+    }
+
 
 }
