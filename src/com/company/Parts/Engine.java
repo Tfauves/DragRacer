@@ -10,9 +10,6 @@ public abstract class Engine {
     }
 
     public abstract void on();
-    public abstract void idle();
     public abstract void off();
-    public abstract void accelerate();
-
 
 }

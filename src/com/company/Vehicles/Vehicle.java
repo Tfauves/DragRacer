@@ -5,14 +5,14 @@ public abstract class Vehicle {
     private int power;
     private int accelerationRate;
     private int brakingAbility;
-    private int speedometer = 0;
 
-    public Vehicle(int maxSpeed, int power, int accelerationRate, int brakingAbility, int speedometer) {
+
+    public Vehicle(int maxSpeed, int power, int accelerationRate, int brakingAbility) {
         this.maxSpeed = maxSpeed;
         this.power = power;
         this.accelerationRate = accelerationRate;
         this.brakingAbility = brakingAbility;
-        this.speedometer = speedometer;
+
     }
 
     public abstract void start();
@@ -40,7 +40,4 @@ public abstract class Vehicle {
         return brakingAbility;
     }
 
-    public int getSpeedometer() {
-        return speedometer;
-    }
 }
