@@ -4,7 +4,7 @@ import com.company.Parts.CarEngine;
 import com.company.Parts.Engine;
 
 public class Car extends Vehicle {
-    private final CarEngine engine;
+    private CarEngine engine;
     private int speedometer;
 
     public Car(CarEngine engine, String type, int maxSpeed, int power, int accelerationRate, int brakingAbility) {
@@ -61,8 +61,15 @@ public class Car extends Vehicle {
     }
 
     public String toString() {
-        return "|Type: " + getType() + " Max Speed: " + getMaxSpeed() + " Power Level " + getPower() + " Acceleration Rate: " + getAccelerationRate() + " Braking Ability " + getBrakingAbility() + "|";
+        return " | Type: " + getType() + " | Engine" + getEngine() + " | Max Speed: " + getMaxSpeed() + " | Power Level " + getPower() + " | Acceleration Rate: " + getAccelerationRate() + " | Braking Ability " + getBrakingAbility() + " | \n";
+    }
+
+    public CarEngine getEngine() {
+        return engine;
     }
 
 
+    public void setEngine(CarEngine engine) {
+        this.engine = engine;
+    }
 }

@@ -30,6 +30,12 @@ public class Main {
         garage01.listBuild();
         garage01.carBuilder();
 
+//        Car streetRacer1 = new Car(null, "Subaru Impreza WRX", 174, 5, 5, 3);
+//        Car streetRacer2 = new Car(null, "Volkswagen Golf/GTI", 155, 4, 5, 5);
+//
+//        CarEngine boxerEngine  = new CarEngine(" Boxer, 2.0 liter flat-four", false, false, false, false,205);
+//        CarEngine nissanVQ35HR  = new CarEngine(" Nissan-VQ35HR, 3.8 liter four valve DOHC", false, false, true, true, 394);
+//        garage01.buildCar(nissanVQ35HR, streetRacer1);
 
     }
 }
