@@ -12,9 +12,10 @@ import java.util.Scanner;
 public class Garage {
     private final List<Vehicle> vehicleList = new ArrayList<>();
     private final List<Engine> engineList = new ArrayList<>();
-    Scanner scanner = new Scanner(System.in);
+    private static final  Scanner scanner = new Scanner(System.in);
     private Car carChoice;
     private CarEngine engineChoice;
+    private Vehicle playerCar;
 
     Car streetRacer1 = new Car(null, "Subaru Impreza WRX", 174, 5, 5, 3);
     Car streetRacer2 = new Car(null, "Volkswagen Golf/GTI", 155, 4, 5, 5);
@@ -82,7 +83,13 @@ public class Garage {
     }
 
     public void buildCar(CarEngine carEngine, Car car) {
-        car.setEngine(carEngine);
-        System.out.println(car);
+       car.setEngine(carEngine);
+       playerCar = car;
+       System.out.println("Your Car:" + car);
+    }
+
+
+    public Vehicle getPlayerCar() {
+        return playerCar;
     }
 }

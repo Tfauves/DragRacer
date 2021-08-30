@@ -27,8 +27,13 @@ public class Main {
 //        dragster1.turnOff();
 
         Garage garage01 = new Garage();
+        SpeedWay race01 =new SpeedWay();
         garage01.listBuild();
         garage01.carBuilder();
+        garage01.getPlayerCar().start();
+        garage01.getPlayerCar().accelerate();
+        garage01.getPlayerCar().accelerate();
+
 
 //        Car streetRacer1 = new Car(null, "Subaru Impreza WRX", 174, 5, 5, 3);
 //        Car streetRacer2 = new Car(null, "Volkswagen Golf/GTI", 155, 4, 5, 5);
