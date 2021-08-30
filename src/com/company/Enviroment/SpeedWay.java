@@ -19,33 +19,34 @@ public class SpeedWay {
 //        this.track = track;
 //    }
 
-
-        int ticksPassed = 0;
-        Timer timeClock = new Timer();
-        TimerTask distanceClock = new TimerTask() {
-            @Override
-            public void run() {
-                ticksPassed++;
-                System.out.println("Ticks passed: " + ticksPassed);
-            }
-        };
-
-        public void beginClock() {
-            isActiveTime = true;
-            if (isActiveTime) {
-                startTimer(1000);
-            }
-        }
-
-        public void stopClock() {
-            if (isActiveTime) {
-                isActiveTime = false;
-            }
-        }
-
-        public void startTimer(int period) {
-            timeClock.scheduleAtFixedRate(distanceClock, 1000, period);
-        }
+//
+//        int ticksPassed = 0;
+//        Timer timeClock = new Timer();
+//        TimerTask distanceClock = new TimerTask() {
+//            @Override
+//            public void run() {
+//                ticksPassed++;
+////                System.out.println("Ticks passed: " + ticksPassed);
+//            }
+//        };
+//
+//        public void beginClock() {
+//            isActiveTime = true;
+//            if (isActiveTime) {
+//                startTimer(1000);
+//            }
+//        }
+//
+//        public void stopClock() {
+//            if (isActiveTime) {
+//                isActiveTime = false;
+//                System.out.println(ticksPassed);
+//            }
+//        }
+//
+//        public void startTimer(int period) {
+//            timeClock.scheduleAtFixedRate(distanceClock, 1000, period);
+//        }
 
 //    public void beginDrive() {
 //        System.out.println("Would you like to drive? y/n");
