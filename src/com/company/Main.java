@@ -30,9 +30,10 @@ public class Main {
         SpeedWay race01 =new SpeedWay();
         garage01.listBuild();
         garage01.carBuilder();
-        garage01.getPlayerCar().start();
-        garage01.getPlayerCar().accelerate();
-        garage01.getPlayerCar().accelerate();
+//        garage01.getPlayerCar().start();
+//        garage01.getPlayerCar().accelerate();
+//        garage01.getPlayerCar().accelerate();
+        garage01.beginDrive();
 
 
 //        Car streetRacer1 = new Car(null, "Subaru Impreza WRX", 174, 5, 5, 3);

@@ -1,12 +1,16 @@
 package com.company.Enviroment;
 
+import com.company.Garage;
+import com.company.Vehicles.Car;
 import com.company.Vehicles.Vehicle;
 
+import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class SpeedWay {
     private boolean isActiveTime = false;
+    private Garage playerGarage;
 //    private int timer;
 //    public Track track;
 //
@@ -43,13 +47,36 @@ public class SpeedWay {
             timeClock.scheduleAtFixedRate(distanceClock, 1000, period);
         }
 
+//    public void beginDrive() {
+//        System.out.println("Would you like to drive? y/n");
+//        String userChoice = Garage.scanner.next();
+//        if (userChoice.equals("y")) {
+//            race(playerGarage.getPlayerCar());
+//        } else {
+//            System.out.println("Returning to garage");
+//        }
+//    }
+//
+//
+//    public void race(Car playerVehicle) {
+//        System.out.println("Press (s) to start your engine");
+//        String userInput = Garage.scanner.next();
+//        if (userInput.equals("s")) {
+//            playerVehicle.start();
+//        } else {
+//            System.out.println("Please start your vehicle to begin driving.");
+//        }
+//        if (playerVehicle.getEngine().getIsOperating()) {
+//            System.out.println("Press (a) to accelerate: ");
+//            if (userInput.equals("a")) {
+//                playerVehicle.accelerate();
+//            }
+//        }
+//
+//
+//    }
 
 
-
-
-    public void race() {
-
-    }
 
 //
 //    public boolean isActiveTime() {
