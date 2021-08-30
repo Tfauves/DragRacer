@@ -22,14 +22,15 @@ public class Car extends Vehicle {
     }
 
     public void accelerate() {
-        int speedIncrement = 50;
+        int speedIncrement = 15;
         if (engine.getIsOperating() && speedometer < getMaxSpeed()) {
             speedometer += speedIncrement;
             System.out.println("\nAccelerate.. \nSpeedometer: " + speedometer + " mph.");
             //superCharger and nitrous will be able to be applied to increase the max speed amount.
-            if (speedometer == getMaxSpeed()) {
-                System.out.println("\n The vehicle is at its max speed");
-            }
+
+        } else if (speedometer >= getMaxSpeed()) {
+            speedometer = getMaxSpeed();
+            System.out.println("\n The vehicle is at its max speed " + speedometer + " mph.");
         }
     }
 
