@@ -39,7 +39,7 @@ public class CarEngine extends Engine {
     }
     //hasSuperCharger, hasNitrous, hasTurboCharger, horsePower
     public String toString() {
-        return "|Type: " + getType() + " Horse Power: " + getHorsePower() + " Super Charger: " + isHasSuperCharger() + " Nitrous: " + isHasNitrous() + " Turbo Charger: " + isHasTurboCharger() + "|";
+        return " |Type: " + getType() + " | Horse Power: " + getHorsePower() + " | Super Charger: " + isHasSuperCharger() + " | Nitrous: " + isHasNitrous() + " | Turbo Charger: " + isHasTurboCharger() + "| \n";
     }
 
 }
