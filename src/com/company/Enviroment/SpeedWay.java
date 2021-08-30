@@ -1,5 +1,7 @@
 package com.company.Enviroment;
 
+import com.company.Vehicles.Vehicle;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -40,6 +42,8 @@ public class SpeedWay {
         public void startTimer(int period) {
             timeClock.scheduleAtFixedRate(distanceClock, 1000, period);
         }
+
+
 
 
 
