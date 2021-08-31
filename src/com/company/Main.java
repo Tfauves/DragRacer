@@ -1,9 +1,7 @@
 package com.company;
 
 
-import com.company.Enviroment.SpeedWay;
-import com.company.Parts.CarEngine;
-import com.company.Vehicles.Car;
+import com.company.enviroment.Garage;
 
 public class Main {
 
@@ -27,7 +25,6 @@ public class Main {
 //        dragster1.turnOff();
 
         Garage garage01 = new Garage();
-        SpeedWay race01 =new SpeedWay();
         garage01.listBuild();
         garage01.carBuilder();
 //        garage01.getPlayerCar().start();
