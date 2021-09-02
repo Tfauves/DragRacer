@@ -76,8 +76,9 @@ public abstract class Vehicle {
         return distanceTraveled;
     }
 
-    public void setDistanceTraveled(int distanceTraveled) {
+    public int setDistanceTraveled(int distanceTraveled) {
         this.distanceTraveled = distanceTraveled;
+        return distanceTraveled;
     }
 
     public int getTimer() {

@@ -22,16 +22,16 @@ public class Garage {
     RaceEngine engine1  = new RaceEngine(205, "V6 gas", false);
     RaceEngine engine2  = new RaceEngine(394, "in6 gas", false);
 
-    int ticksPassed = 0;
-    Timer timeClock = new Timer();
-    TimerTask distanceClock = new TimerTask() {
-        @Override
-        public void run() {
-            ticksPassed++;
-//            System.out.println("Ticks passed: " + ticksPassed);
-        }
-    };
-
+//    int ticksPassed = 0;
+//    Timer timeClock = new Timer();
+//    TimerTask distanceClock = new TimerTask() {
+//        @Override
+//        public void run() {
+//            ticksPassed++;
+////            System.out.println("Ticks passed: " + ticksPassed);
+//        }
+//    };
+//
 //    public void beginClock() {
 //        isActiveTime = true;
 //        if (isActiveTime) {
@@ -49,7 +49,7 @@ public class Garage {
 //    public void startTimer(int period) {
 //        timeClock.scheduleAtFixedRate(distanceClock, 1000, period);
 //    }
-//
+
 
     public void listBuild() {
         int carCount = 0;

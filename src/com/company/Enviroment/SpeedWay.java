@@ -51,13 +51,14 @@ public class SpeedWay {
         race(playerGarage.getPlayerCar());
     }
 
+    // TODO: 9/2/2021 implement time and distance passes during acceleration. 
     public void race(Car playerVehicle) {
         boolean isActive = true;
         System.out.println("Press (s) to start your engine");
         String userInput = Garage.scanner.next();
         if (userInput.equals("s")) {
             playerVehicle.start();
-//            beginClock();
+//            playerGarage.beginClock();
         } else {
             System.out.println("Please start your vehicle to begin driving.");
         }
@@ -66,14 +67,29 @@ public class SpeedWay {
                 System.out.println("Press (a) to accelerate, (b) to brake, (x) to coast, (ab) to stop short, (y) to turn off vehicle, (xy) end race and to return to garage");
                 userInput = Garage.scanner.next();
                 switch (userInput) {
-                    case "a" -> playerVehicle.accelerate();
-                    case "b" -> playerVehicle.brake();
-                    case "x" -> playerVehicle.coast();
-                    case "ab" -> playerVehicle.stopShort();
+                    case "a" -> {
+                        playerVehicle.accelerate();
+                        playerGarage.getPlayerCar().setDistanceTraveled(playerGarage.getPlayerCar().getDistanceTraveled() + 8);
+                        playerGarage.getPlayerCar().setTimer(playerGarage.getPlayerCar().getTimer() + 2);
+                    }
+                    case "b" -> {
+                        playerVehicle.brake();
+                        playerGarage.getPlayerCar().setDistanceTraveled(playerGarage.getPlayerCar().getDistanceTraveled() + 1);
+                        playerGarage.getPlayerCar().setTimer(playerGarage.getPlayerCar().getTimer() + 2);
+                    }
+                    case "x" -> {
+                        playerVehicle.coast();
+                        playerGarage.getPlayerCar().setDistanceTraveled(playerGarage.getPlayerCar().getDistanceTraveled() + 2);
+                        playerGarage.getPlayerCar().setTimer(playerGarage.getPlayerCar().getTimer() + 2);
+                    }
+                    case "ab" -> {
+                        playerVehicle.stopShort();
+                        playerGarage.getPlayerCar().setTimer(playerGarage.getPlayerCar().getTimer() + 2);
+                    }
                     case "y" -> playerVehicle.turnOff();
                     case "xy" -> {
                         System.out.println("The race is over...heading back to garage");
-//                        stopClock();
+//                        playerGarage.stopClock();
                         isActive = false;
                         System.exit(0);
                     }
@@ -85,7 +101,6 @@ public class SpeedWay {
 
 
     }
-
 
     public List<Track> getTrackList() {
         return trackList;

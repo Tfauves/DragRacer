@@ -65,6 +65,7 @@ public class Car extends Vehicle {
 
     }
 
+    // TODO: 9/2/2021 refactor and check where used. 
     public void dashDisplay() {
         System.out.println(" | Speedometer: " + getSpeedometer() + " | Finish: " + getFinishDistance() + " | Traveled: " + getDistanceTraveled() + " | Time: " + getTimer());
     }
