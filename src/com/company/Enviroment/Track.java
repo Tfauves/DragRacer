@@ -1,13 +1,17 @@
 package com.company.Enviroment;
 
 public class Track {
+    String lvlOfDifficulty;
     private int length;
-    private String vehiclePosition;
     public Hazard hazard;
 
-    public Track(int length, String vehiclePosition, Hazard hazard) {
+    public Track(String lvlOfDifficulty, int length, Hazard hazard) {
+        this.lvlOfDifficulty = lvlOfDifficulty;
         this.length = length;
-        this.vehiclePosition = vehiclePosition;
         this.hazard = hazard;
+    }
+
+    public int getLength() {
+        return length;
     }
 }
