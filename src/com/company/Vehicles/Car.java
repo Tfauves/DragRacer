@@ -59,7 +59,7 @@ public class Car extends Vehicle {
     }
 
     public String toString() {
-        return " | Type: " + getType() + " | Engine" + getEngine() + " | Max Speed: " + getMaxSpeed() + " | \n1";
+        return " | Type: " + getType() + " | Engine: " + getEngine() + " | Max Speed: " + getMaxSpeed() + " |";
     }
 
 

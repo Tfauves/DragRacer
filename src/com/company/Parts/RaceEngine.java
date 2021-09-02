@@ -21,6 +21,6 @@ public class RaceEngine extends Engine{
     }
 
     public String toString() {
-        return "| Type: " + getType() + " | Horse Power: " + getHorsePower() + " | \n";
+        return "| Type: " + getType() + " | Horse Power: " + getHorsePower() + " |";
     }
 }
