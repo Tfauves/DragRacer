@@ -22,12 +22,12 @@ public class Car extends Vehicle {
         int speedIncrement = 15;
         if (super.getEngine().getIsOperating() && getSpeedometer() < getMaxSpeed()) {
            setSpeedometer(getSpeedometer() + speedIncrement);
-            System.out.println("\nAccelerate.. \nSpeedometer: " + getSpeedometer() + " mph.");
+            System.out.println("\nAccelerate.. \nSpeedometer: " + getSpeedometer() + " mps.");
             dashDisplay();
 
         } else if (getSpeedometer() >= getMaxSpeed()) {
             setSpeedometer(getMaxSpeed());
-            System.out.println("\n The vehicle is at its max speed " + getSpeedometer() + " mph.");
+            System.out.println("\n The vehicle is at its max speed " + getSpeedometer() + " mps.");
             dashDisplay();
         }
 
@@ -35,7 +35,7 @@ public class Car extends Vehicle {
 
     public void coast() {
         if ( super.getEngine().getIsOperating() && getSpeedometer() > 0) {
-            System.out.println("\nCoasting. \n Speedometer: " + getSpeedometer() + " mph.");
+            System.out.println("\nCoasting. \n Speedometer: " + getSpeedometer() + " mps.");
             dashDisplay();
         }
 
@@ -45,10 +45,10 @@ public class Car extends Vehicle {
         int speedDecrement = 2;
         if (super.getEngine().getIsOperating() && getSpeedometer() > 0) {
            setSpeedometer(getSpeedometer() - speedDecrement);
-            System.out.println("\nYou applied the brakes. \n Speedometer: " + getSpeedometer() + " mph. \n");
+            System.out.println("\nYou applied the brakes. \n Speedometer: " + getSpeedometer() + " mps. \n");
             dashDisplay();
         } else if (getSpeedometer() <= 0) {
-            System.out.println("The vehicle is stopped \n Speedometer: " + getSpeedometer() + " mph. \n");
+            System.out.println("The vehicle is stopped \n Speedometer: " + getSpeedometer() + " mps. \n");
             dashDisplay();
         } else {
             System.out.println("The engine needs to be running to accelerate. Please start vehicle first.");

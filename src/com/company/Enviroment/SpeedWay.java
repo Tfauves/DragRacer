@@ -66,8 +66,8 @@ public class SpeedWay {
                 switch (userInput) {
                     case "a" -> {
                         playerVehicle.accelerate();
-                        playerGarage.getPlayerCar().setDistanceTraveled(playerGarage.getPlayerCar().getDistanceTraveled() + 8);
-                        playerGarage.getPlayerCar().setTimer(playerGarage.getPlayerCar().getTimer() + 2);
+                        playerGarage.getPlayerCar().setDistanceTraveled(playerGarage.getPlayerCar().getSpeedometer());
+                        playerGarage.getPlayerCar().setTimer(playerGarage.getPlayerCar().getTimer() + 1);
                     }
                     case "b" -> {
                         playerVehicle.brake();
@@ -94,7 +94,6 @@ public class SpeedWay {
 
             }
         }
-
 
     }
 }
