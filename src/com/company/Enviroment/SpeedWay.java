@@ -7,6 +7,7 @@ import java.util.List;
 public class SpeedWay {
     private Garage playerGarage;
     private List<Track> trackList = new ArrayList<>();
+    private Track userTrack;
 
 
     Track track01 = new Track("beginner", 400, new Hazard(4, "watery lake"));
@@ -38,13 +39,22 @@ public class SpeedWay {
             try {
                 int userChoice = Garage.scanner.nextInt();
                 switch (userChoice) {
-                    case 1 -> playerGarage.getPlayerCar().setFinishDistance(track01.getLength());
-                    case 2 -> playerGarage.getPlayerCar().setFinishDistance(track02.getLength());
-                    case 3 -> playerGarage.getPlayerCar().setFinishDistance(track03.getLength());
+                    case 1 -> {
+                        playerGarage.getPlayerCar().setFinishDistance(track01.getLength());
+                        userTrack = track01;
+                    }
+                    case 2 -> {
+                        playerGarage.getPlayerCar().setFinishDistance(track02.getLength());
+                        userTrack = track02;
+                    }
+                    case 3 -> {
+                        playerGarage.getPlayerCar().setFinishDistance(track03.getLength());
+                        userTrack = track03;
+                    }
                     default -> System.out.println("Invalid Input");
                 }
             } catch (Exception e) {
-                System.out.println("Invalid selection, default track selected");
+                System.out.println("Invalid selection");
             }
             race(playerGarage.getPlayerCar());
     }
@@ -66,22 +76,29 @@ public class SpeedWay {
                 switch (userInput) {
                     case "a" -> {
                         playerVehicle.accelerate();
-                        playerGarage.getPlayerCar().setDistanceTraveled(playerGarage.getPlayerCar().getSpeedometer());
-                        playerGarage.getPlayerCar().setTimer(playerGarage.getPlayerCar().getTimer() + 1);
+                        playerGarage.getPlayerCar().setDistanceTraveled(playerGarage.getPlayerCar().getSpeedometer() * 2);
+                        playerGarage.getPlayerCar().setTimer(playerGarage.getPlayerCar().getDistanceTraveled());
+                        if (playerGarage.getPlayerCar().getDistanceTraveled() >= userTrack.getLength()) {
+                            System.out.println("You are at the finish line stop!!!!");
+                            break;
+                        }
                     }
                     case "b" -> {
                         playerVehicle.brake();
                         playerGarage.getPlayerCar().setDistanceTraveled(playerGarage.getPlayerCar().getDistanceTraveled() + 1);
                         playerGarage.getPlayerCar().setTimer(playerGarage.getPlayerCar().getTimer() + 2);
+                        break;
                     }
                     case "x" -> {
                         playerVehicle.coast();
                         playerGarage.getPlayerCar().setDistanceTraveled(playerGarage.getPlayerCar().getDistanceTraveled() + 2);
                         playerGarage.getPlayerCar().setTimer(playerGarage.getPlayerCar().getTimer() + 2);
+                        break;
                     }
                     case "ab" -> {
                         playerVehicle.stopShort();
                         playerGarage.getPlayerCar().setTimer(playerGarage.getPlayerCar().getTimer() + 2);
+                        break;
                     }
                     case "y" -> playerVehicle.turnOff();
                     case "xy" -> {

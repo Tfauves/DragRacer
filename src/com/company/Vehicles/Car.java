@@ -19,23 +19,24 @@ public class Car extends Vehicle {
     }
 
     public void accelerate() {
-        int speedIncrement = 15;
-        if (super.getEngine().getIsOperating() && getSpeedometer() < getMaxSpeed()) {
+        int speedIncrement = 10;
+        if (super.getEngine().getIsOperating()) {
            setSpeedometer(getSpeedometer() + speedIncrement);
-            System.out.println("\nAccelerate.. \nSpeedometer: " + getSpeedometer() + " mps.");
+            System.out.println("\nAccelerate...");
             dashDisplay();
 
-        } else if (getSpeedometer() >= getMaxSpeed()) {
-            setSpeedometer(getMaxSpeed());
-            System.out.println("\n The vehicle is at its max speed " + getSpeedometer() + " mps.");
-            dashDisplay();
         }
+//        else if (getSpeedometer() >= getMaxSpeed()) {
+//            setDistanceTraveled(getDistanceTraveled() + getSpeedometer());
+//            System.out.println("\n The vehicle is at its max speed...");
+//            dashDisplay();
+//        }
 
     }
 
     public void coast() {
         if ( super.getEngine().getIsOperating() && getSpeedometer() > 0) {
-            System.out.println("\nCoasting. \n Speedometer: " + getSpeedometer() + " mps.");
+            System.out.println("\nCoasting...");
             dashDisplay();
         }
 
@@ -45,10 +46,10 @@ public class Car extends Vehicle {
         int speedDecrement = 2;
         if (super.getEngine().getIsOperating() && getSpeedometer() > 0) {
            setSpeedometer(getSpeedometer() - speedDecrement);
-            System.out.println("\nYou applied the brakes. \n Speedometer: " + getSpeedometer() + " mps. \n");
+            System.out.println("\nYou applied the brakes...");
             dashDisplay();
         } else if (getSpeedometer() <= 0) {
-            System.out.println("The vehicle is stopped \n Speedometer: " + getSpeedometer() + " mps. \n");
+            System.out.println("The vehicle is stopped...");
             dashDisplay();
         } else {
             System.out.println("The engine needs to be running to accelerate. Please start vehicle first.");
@@ -59,7 +60,7 @@ public class Car extends Vehicle {
     public void stopShort() {
         if (super.getEngine().getIsOperating() && getSpeedometer() > 0) {
            setSpeedometer(0);
-            System.out.println("The vehicle has skidded to a stop. \n Speedometer: " + getSpeedometer());
+            System.out.println("The vehicle has skidded to a stop...");
             dashDisplay();
         }
 
@@ -67,7 +68,7 @@ public class Car extends Vehicle {
 
     // TODO: 9/2/2021 refactor and check where used. 
     public void dashDisplay() {
-        System.out.println(" | Speedometer: " + getSpeedometer() + " | Finish: " + getFinishDistance() + " | Traveled: " + getDistanceTraveled() + " | Time: " + getTimer());
+        System.out.println(" | Speedometer: " + getSpeedometer() + "mps | Finish: " + getFinishDistance() + " | Traveled: " + getDistanceTraveled() + "m | Time: " + getTimer() + "s | ");
     }
 
     public String toString() {
