@@ -1,13 +1,5 @@
 package com.company.Enviroment;
 
-import com.company.Garage;
-import com.company.Vehicles.Car;
-import com.company.Vehicles.Vehicle;
-
-import java.util.Scanner;
-import java.util.Timer;
-import java.util.TimerTask;
-
 public class SpeedWay {
     private boolean isActiveTime = false;
     private Garage playerGarage;

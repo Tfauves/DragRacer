@@ -1,75 +1,69 @@
 package com.company.Vehicles;
 
-import com.company.Parts.CarEngine;
+import com.company.Parts.Engine;
+import com.company.Parts.RaceEngine;
 
 public class Car extends Vehicle {
-    private CarEngine engine;
-    private int speedometer;
 
-    public Car(CarEngine engine, String type, int maxSpeed, int power, int accelerationRate, int brakingAbility) {
-        super(maxSpeed, power, accelerationRate, brakingAbility, type);
-        this.engine = engine;
-        speedometer = 0;
+    public Car(Engine engine, String type, int maxSpeed, int speedometer, int finishDistance, int distanceTraveled, int timer) {
+        super(engine, type, maxSpeed, speedometer, finishDistance, distanceTraveled, timer);
+        this.setEngine(engine);
     }
 
     public void start() {
-        engine.on();
+        super.getEngine().on();
     }
 
     public void turnOff() {
-        engine.off();
+        super.getEngine().off();
     }
 
     public void accelerate() {
         int speedIncrement = 15;
-        if (engine.getIsOperating() && speedometer < getMaxSpeed()) {
-            speedometer += speedIncrement;
-            System.out.println("\nAccelerate.. \nSpeedometer: " + speedometer + " mph.");
+        if (super.getEngine().getIsOperating() && getSpeedometer() < getMaxSpeed()) {
+           setSpeedometer(getSpeedometer() + speedIncrement);
+            System.out.println("\nAccelerate.. \nSpeedometer: " + getSpeedometer() + " mph.");
             //superCharger and nitrous will be able to be applied to increase the max speed amount.
 
-        } else if (speedometer >= getMaxSpeed()) {
-            speedometer = getMaxSpeed();
-            System.out.println("\n The vehicle is at its max speed " + speedometer + " mph.");
+        } else if (getSpeedometer() >= getMaxSpeed()) {
+            setSpeedometer(getMaxSpeed());
+            System.out.println("\n The vehicle is at its max speed " + getSpeedometer() + " mph.");
         }
     }
 
     public void coast() {
-        if ( engine.getIsOperating() && speedometer > 0) {
-            System.out.println("\nCoasting. \n Speedometer: " + speedometer + " mph.");
+        if ( super.getEngine().getIsOperating() && getSpeedometer() > 0) {
+            System.out.println("\nCoasting. \n Speedometer: " + getSpeedometer() + " mph.");
         }
 
     }
 
     public void brake() {
         int speedDecrement = 2;
-        if (engine.getIsOperating() && speedometer > 0) {
-            speedometer -= speedDecrement;
-            System.out.println("\nYou applied the brakes. \n Speedometer: " + speedometer + " mph. \n");
-        } else if (speedometer <= 0) {
-            System.out.println("The vehicle is stopped \n Speedometer: " + speedometer + " mph. \n");
+        if (super.getEngine().getIsOperating() && getSpeedometer() > 0) {
+           setSpeedometer(getSpeedometer() - speedDecrement);
+            System.out.println("\nYou applied the brakes. \n Speedometer: " + getSpeedometer() + " mph. \n");
+        } else if (getSpeedometer() <= 0) {
+            System.out.println("The vehicle is stopped \n Speedometer: " + getSpeedometer() + " mph. \n");
         } else {
             System.out.println("The engine needs to be running to accelerate. Please start vehicle first.");
         }
     }
 
     public void stopShort() {
-        if (engine.getIsOperating() && speedometer > 0) {
-            speedometer = 0;
-            System.out.println("The vehicle has skidded to a stop. \n Speedometer: " + speedometer);
+        if (super.getEngine().getIsOperating() && getSpeedometer() > 0) {
+           setSpeedometer(0);
+            System.out.println("The vehicle has skidded to a stop. \n Speedometer: " + getSpeedometer());
         }
 
     }
 
     public String toString() {
-        return " | Type: " + getType() + " | Engine" + getEngine() + " | Max Speed: " + getMaxSpeed() + " | Power Level " + getPower() + " | Acceleration Rate: " + getAccelerationRate() + " | Braking Ability " + getBrakingAbility() + " | \n";
-    }
-
-    public CarEngine getEngine() {
-        return engine;
+        return " | Type: " + getType() + " | Engine" + getEngine() + " | Max Speed: " + getMaxSpeed() + " | \n1";
     }
 
 
-    public void setEngine(CarEngine engine) {
-        this.engine = engine;
+    public void setEngine(RaceEngine engine) {
+        super.setEngine(engine);
     }
 }
