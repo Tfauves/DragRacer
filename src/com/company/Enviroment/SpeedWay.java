@@ -103,6 +103,7 @@ public class SpeedWay {
                     case "y" -> playerVehicle.turnOff();
                     case "xy" -> {
                         System.out.println("The race is over...heading back to garage");
+                        System.out.println("Your time was: " + playerGarage.getPlayerCar().getTimer() + "s");
                         isActive = false;
                         System.exit(0);
                     }
