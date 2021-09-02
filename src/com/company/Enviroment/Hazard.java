@@ -8,4 +8,8 @@ public class Hazard {
         this.damage = damage;
         this.type = type;
     }
+
+    public String getType() {
+        return type;
+    }
 }

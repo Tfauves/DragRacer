@@ -39,21 +39,12 @@ public abstract class Vehicle {
         return type;
     }
 
-
     public Engine getEngine() {
         return engine;
     }
 
     public void setEngine(Engine engine) {
         this.engine = engine;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
     }
 
     public int getSpeedometer() {

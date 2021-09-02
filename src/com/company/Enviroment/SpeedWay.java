@@ -1,54 +1,52 @@
 package com.company.Enviroment;
-
 import com.company.Vehicles.Car;
-
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class SpeedWay {
-//    private boolean isActiveTime = false;
     private Garage playerGarage;
-    public Track track;
     private List<Track> trackList = new ArrayList<>();
+
+
+    Track track01 = new Track("beginner", 400, new Hazard(4, "watery lake"));
+    Track track02 = new Track("novice", 600, new Hazard(6, "wall of flaming hay"));
+    Track track03 = new Track("pro", 800, new Hazard(10, "brick wall"));
 
 
     public SpeedWay(Garage playerGarage) {
         this.playerGarage = playerGarage;
     }
 
-//    public void buildTrack(String lvlOfDifficulty, int length) {
-//        Track track = new Track(lvlOfDifficulty, length);
-//        trackList.add(track);
-//    }
-        Track track01 = new Track("beginner", 400, null);
-
     public void addToTrackList() {
         trackList.add(track01);
+        trackList.add(track02);
+        trackList.add(track03);
     }
 
     public void displayTrack() {
         int trackCount = 0;
         for (Track tracks : trackList) {
             trackCount++;
-            System.out.println(trackCount + ": Level of difficulty: " + tracks.lvlOfDifficulty + " | end track hazard: " + tracks.hazard + " | Length to finish: " + tracks.getLength() + "m");
+            System.out.println(trackCount + ": Level of difficulty: " + tracks.lvlOfDifficulty + " | end track hazard: " + tracks.hazard.getType() + " | Length to finish: " + tracks.getLength() + "m");
         }
     }
 
-
     public void beginDrive() {
-        System.out.println("Select the track: ");
-        displayTrack();
-        int userChoice = Garage.scanner.nextInt();
-        switch (userChoice) {
-            case 1:
-              playerGarage.getPlayerCar().setFinishDistance(track01.getLength());
-        }
-//        if (userChoice.equals("y")) {
-//            race(playerGarage.getPlayerCar());
-//        } else {
-//            System.out.println("Returning to garage");
-//        }
-        race(playerGarage.getPlayerCar());
+            System.out.println("Select the track: ");
+            displayTrack();
+            try {
+                int userChoice = Garage.scanner.nextInt();
+                switch (userChoice) {
+                    case 1 -> playerGarage.getPlayerCar().setFinishDistance(track01.getLength());
+                    case 2 -> playerGarage.getPlayerCar().setFinishDistance(track02.getLength());
+                    case 3 -> playerGarage.getPlayerCar().setFinishDistance(track03.getLength());
+                    default -> System.out.println("Invalid Input");
+                }
+            } catch (Exception e) {
+                System.out.println("Invalid selection, default track selected");
+            }
+            race(playerGarage.getPlayerCar());
     }
 
     // TODO: 9/2/2021 implement time and distance passes during acceleration. 
@@ -58,7 +56,6 @@ public class SpeedWay {
         String userInput = Garage.scanner.next();
         if (userInput.equals("s")) {
             playerVehicle.start();
-//            playerGarage.beginClock();
         } else {
             System.out.println("Please start your vehicle to begin driving.");
         }
@@ -89,7 +86,6 @@ public class SpeedWay {
                     case "y" -> playerVehicle.turnOff();
                     case "xy" -> {
                         System.out.println("The race is over...heading back to garage");
-//                        playerGarage.stopClock();
                         isActive = false;
                         System.exit(0);
                     }
@@ -100,9 +96,5 @@ public class SpeedWay {
         }
 
 
-    }
-
-    public List<Track> getTrackList() {
-        return trackList;
     }
 }
