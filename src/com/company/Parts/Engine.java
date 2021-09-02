@@ -1,34 +1,33 @@
 package com.company.Parts;
 
 public abstract class Engine {
-    private boolean hasSuperCharger;
-    private boolean hasNitrous;
-    private boolean hasTurboCharger;
     private int horsePower;
+    private String type;
+    private boolean isOperating;
 
-    public Engine(boolean hasSuperCharger, boolean hasNitrous, boolean hasTurboCharger, int horsePower) {
-        this.hasSuperCharger = hasSuperCharger;
-        this.hasNitrous = hasNitrous;
-        this.hasTurboCharger = hasTurboCharger;
+    public Engine(int horsePower, String type, boolean isOperating) {
         this.horsePower = horsePower;
+        this.type = type;
+        this.isOperating = isOperating;
     }
 
     public abstract void on();
     public abstract void off();
-
-    public boolean isHasSuperCharger() {
-        return hasSuperCharger;
-    }
-
-    public boolean isHasNitrous() {
-        return hasNitrous;
-    }
-
-    public boolean isHasTurboCharger() {
-        return hasTurboCharger;
-    }
+    public abstract String toString();
 
     public int getHorsePower() {
         return horsePower;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public boolean getIsOperating() {
+        return isOperating;
+    }
+
+    public void setIsOperating(boolean operating) {
+        isOperating = operating;
     }
 }

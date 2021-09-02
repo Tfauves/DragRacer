@@ -1,19 +1,25 @@
 package com.company.Vehicles;
 
+import com.company.Parts.Engine;
+
 public abstract class Vehicle {
-    private int maxSpeed;
-    private int power;
-    private int accelerationRate;
-    private int brakingAbility;
+    private Engine engine;
     private String type;
+    private int maxSpeed;
+    private int speedometer;
+    private int finishDistance;
+    private int distanceTraveled;
+    private int timer;
 
 
-    public Vehicle(int maxSpeed, int power, int accelerationRate, int brakingAbility, String type) {
-        this.maxSpeed = maxSpeed;
-        this.power = power;
-        this.accelerationRate = accelerationRate;
-        this.brakingAbility = brakingAbility;
+    public Vehicle(Engine engine, String type, int maxSpeed, int speedometer, int finishDistance, int distanceTraveled, int timer) {
+        this.engine = engine;
         this.type = type;
+        this.maxSpeed = maxSpeed;
+        this.speedometer = speedometer;
+        this.finishDistance = finishDistance;
+        this.distanceTraveled = distanceTraveled;
+        this.timer = timer;
 
     }
 
@@ -29,22 +35,56 @@ public abstract class Vehicle {
         return maxSpeed;
     }
 
-
-    public int getPower() {
-        return power;
-    }
-
-    public int getAccelerationRate() {
-        return accelerationRate;
-    }
-
-    public int getBrakingAbility() {
-        return brakingAbility;
-    }
-
     public String getType() {
         return type;
     }
 
 
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
+    public int getSpeedometer() {
+        return speedometer;
+    }
+
+    public void setSpeedometer(int speedometer) {
+        this.speedometer = speedometer;
+    }
+
+    public int getFinishDistance() {
+        return finishDistance;
+    }
+
+    public void setFinishDistance(int finishDistance) {
+        this.finishDistance = finishDistance;
+    }
+
+    public int getDistanceTraveled() {
+        return distanceTraveled;
+    }
+
+    public void setDistanceTraveled(int distanceTraveled) {
+        this.distanceTraveled = distanceTraveled;
+    }
+
+    public int getTimer() {
+        return timer;
+    }
+
+    public void setTimer(int timer) {
+        this.timer = timer;
+    }
 }

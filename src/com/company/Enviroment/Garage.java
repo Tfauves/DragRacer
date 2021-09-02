@@ -1,8 +1,7 @@
-package com.company;
+package com.company.Enviroment;
 
-import com.company.Enviroment.SpeedWay;
-import com.company.Parts.CarEngine;
 import com.company.Parts.Engine;
+import com.company.Parts.RaceEngine;
 import com.company.Vehicles.Car;
 import com.company.Vehicles.Vehicle;
 
@@ -13,15 +12,15 @@ public class Garage {
     private final List<Engine> engineList = new ArrayList<>();
     public static final Scanner scanner = new Scanner(System.in);
     private Car carChoice;
-    private CarEngine engineChoice;
+    private RaceEngine engineChoice;
     private Car playerCar;
     boolean isActiveTime = false;
 
-    Car streetRacer1 = new Car(null, "Subaru Impreza WRX", 174, 5, 5, 3);
-    Car streetRacer2 = new Car(null, "Volkswagen Golf/GTI", 155, 4, 5, 5);
+    Car streetRacer1 = new Car(null, "Subaru Impreza WRX",170, 0, 0, 0, 0);
+    Car streetRacer2 = new Car(null, "Volkswagen Golf/GTI",155, 0, 0, 0, 0);
 
-    CarEngine engine1  = new CarEngine(" Boxer, 2.0 liter flat-four", false, false, false, false,205);
-    CarEngine engine2  = new CarEngine(" Nissan-VQ35HR, 3.8 liter four valve DOHC", false, false, true, true, 394);
+    RaceEngine engine1  = new RaceEngine(205, "V6 gas", false);
+    RaceEngine engine2  = new RaceEngine(394, "in6 gas", false);
 
     int ticksPassed = 0;
     Timer timeClock = new Timer();
@@ -111,7 +110,7 @@ public class Garage {
         buildCar(engineChoice, carChoice);
     }
 
-    public void buildCar(CarEngine carEngine, Car car) {
+    public void buildCar(RaceEngine carEngine, Car car) {
        car.setEngine(carEngine);
        playerCar = car;
         System.out.println();
