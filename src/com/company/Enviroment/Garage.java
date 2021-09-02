@@ -22,35 +22,6 @@ public class Garage {
     RaceEngine engine1  = new RaceEngine(205, "V6 gas", false);
     RaceEngine engine2  = new RaceEngine(394, "in6 gas", false);
 
-//    int ticksPassed = 0;
-//    Timer timeClock = new Timer();
-//    TimerTask distanceClock = new TimerTask() {
-//        @Override
-//        public void run() {
-//            ticksPassed++;
-////            System.out.println("Ticks passed: " + ticksPassed);
-//        }
-//    };
-//
-//    public void beginClock() {
-//        isActiveTime = true;
-//        if (isActiveTime) {
-//            startTimer(100);
-//        }
-//    }
-//
-//    public void stopClock() {
-//        if (isActiveTime) {
-//            isActiveTime = false;
-//            System.out.println("Your time: " + ticksPassed + " sec");
-//        }
-//    }
-//
-//    public void startTimer(int period) {
-//        timeClock.scheduleAtFixedRate(distanceClock, 1000, period);
-//    }
-
-
     public void listBuild() {
         int carCount = 0;
         int engineCount = 0;
@@ -76,7 +47,6 @@ public class Garage {
             System.out.println(engineCount + ":" + carEngine + "\n");
         }
         System.out.println("------------------------------------------------------------------------------------------------------------------------------");
-
     }
 
     public void carBuilder() {
@@ -105,54 +75,6 @@ public class Garage {
         System.out.println();
        System.out.println("Your Car:" + car);
     }
-
-//    public void beginDrive() {
-//        System.out.println("Would you like to drive? y/n");
-//        String userChoice = Garage.scanner.next();
-//        if (userChoice.equals("y")) {
-//            race(playerCar);
-//        } else {
-//            System.out.println("Returning to garage");
-//        }
-//    }
-//
-//
-//    public void race(Car playerVehicle) {
-//        boolean isActive = true;
-//        System.out.println("Press (s) to start your engine");
-//        String userInput = scanner.next();
-//        if (userInput.equals("s")) {
-//            playerVehicle.start();
-////            beginClock();
-//        } else {
-//            System.out.println("Please start your vehicle to begin driving.");
-//        }
-//        while (isActive) {
-//            if (playerVehicle.getEngine().getIsOperating()) {
-//                System.out.println("Press (a) to accelerate, (b) to brake, (x) to coast, (ab) to stop short, (y) to turn off vehicle, (xy) end race and to return to garage");
-//                userInput = scanner.next();
-//                switch (userInput) {
-//                    case "a" -> playerVehicle.accelerate();
-//                    case "b" -> playerVehicle.brake();
-//                    case "x" -> playerVehicle.coast();
-//                    case "ab" -> playerVehicle.stopShort();
-//                    case "y" -> playerVehicle.turnOff();
-//                    case "xy" -> {
-//                        System.out.println("The race is over...heading back to garage");
-////                        stopClock();
-//                        isActive = false;
-//                        System.exit(0);
-//                    }
-//                    default -> System.out.println("Not Valid");
-//                }
-//
-//            }
-//        }
-//
-//
-//    }
-//
-//
 
     public Car getPlayerCar() {
         return playerCar;
