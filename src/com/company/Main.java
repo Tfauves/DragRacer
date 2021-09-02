@@ -9,10 +9,12 @@ public class Main {
     public static void main(String[] args) {
 
         Garage garage01 = new Garage();
-        SpeedWay race01 =new SpeedWay();
+        SpeedWay race01 =new SpeedWay(garage01);
+        race01.addToTrackList();
+//        race01.displayTrack();
         garage01.listBuild();
         garage01.carBuilder();
-        garage01.beginDrive();
+        race01.beginDrive();
 
 
     }
