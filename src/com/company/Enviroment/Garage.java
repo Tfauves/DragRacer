@@ -32,24 +32,24 @@ public class Garage {
         }
     };
 
-    public void beginClock() {
-        isActiveTime = true;
-        if (isActiveTime) {
-            startTimer(100);
-        }
-    }
-
-    public void stopClock() {
-        if (isActiveTime) {
-            isActiveTime = false;
-            System.out.println("Your time: " + ticksPassed + " sec");
-        }
-    }
-
-    public void startTimer(int period) {
-        timeClock.scheduleAtFixedRate(distanceClock, 1000, period);
-    }
-
+//    public void beginClock() {
+//        isActiveTime = true;
+//        if (isActiveTime) {
+//            startTimer(100);
+//        }
+//    }
+//
+//    public void stopClock() {
+//        if (isActiveTime) {
+//            isActiveTime = false;
+//            System.out.println("Your time: " + ticksPassed + " sec");
+//        }
+//    }
+//
+//    public void startTimer(int period) {
+//        timeClock.scheduleAtFixedRate(distanceClock, 1000, period);
+//    }
+//
 
     public void listBuild() {
         int carCount = 0;
@@ -123,7 +123,7 @@ public class Garage {
         String userInput = scanner.next();
         if (userInput.equals("s")) {
             playerVehicle.start();
-            beginClock();
+//            beginClock();
         } else {
             System.out.println("Please start your vehicle to begin driving.");
         }
@@ -132,30 +132,18 @@ public class Garage {
                 System.out.println("Press (a) to accelerate, (b) to brake, (x) to coast, (ab) to stop short, (y) to turn off vehicle, (xy) end race and to return to garage");
                 userInput = scanner.next();
                 switch (userInput) {
-                    case "a":
-                        playerVehicle.accelerate();
-                        break;
-                    case "b":
-                        playerVehicle.brake();
-                        break;
-                    case "x":
-                        playerVehicle.coast();
-                        break;
-                    case "ab":
-                        playerVehicle.stopShort();
-                        break;
-                    case "y":
-                        playerVehicle.turnOff();
-                        break;
-                    case "xy":
+                    case "a" -> playerVehicle.accelerate();
+                    case "b" -> playerVehicle.brake();
+                    case "x" -> playerVehicle.coast();
+                    case "ab" -> playerVehicle.stopShort();
+                    case "y" -> playerVehicle.turnOff();
+                    case "xy" -> {
                         System.out.println("The race is over...heading back to garage");
-                        stopClock();
+//                        stopClock();
                         isActive = false;
                         System.exit(0);
-                        break;
-                    default:
-                        System.out.println("Not Valid");
-                        break;
+                    }
+                    default -> System.out.println("Not Valid");
                 }
 
             }

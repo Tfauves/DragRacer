@@ -23,17 +23,20 @@ public class Car extends Vehicle {
         if (super.getEngine().getIsOperating() && getSpeedometer() < getMaxSpeed()) {
            setSpeedometer(getSpeedometer() + speedIncrement);
             System.out.println("\nAccelerate.. \nSpeedometer: " + getSpeedometer() + " mph.");
-            //superCharger and nitrous will be able to be applied to increase the max speed amount.
+            dashDisplay();
 
         } else if (getSpeedometer() >= getMaxSpeed()) {
             setSpeedometer(getMaxSpeed());
             System.out.println("\n The vehicle is at its max speed " + getSpeedometer() + " mph.");
+            dashDisplay();
         }
+
     }
 
     public void coast() {
         if ( super.getEngine().getIsOperating() && getSpeedometer() > 0) {
             System.out.println("\nCoasting. \n Speedometer: " + getSpeedometer() + " mph.");
+            dashDisplay();
         }
 
     }
@@ -43,10 +46,13 @@ public class Car extends Vehicle {
         if (super.getEngine().getIsOperating() && getSpeedometer() > 0) {
            setSpeedometer(getSpeedometer() - speedDecrement);
             System.out.println("\nYou applied the brakes. \n Speedometer: " + getSpeedometer() + " mph. \n");
+            dashDisplay();
         } else if (getSpeedometer() <= 0) {
             System.out.println("The vehicle is stopped \n Speedometer: " + getSpeedometer() + " mph. \n");
+            dashDisplay();
         } else {
             System.out.println("The engine needs to be running to accelerate. Please start vehicle first.");
+            dashDisplay();
         }
     }
 
@@ -54,8 +60,13 @@ public class Car extends Vehicle {
         if (super.getEngine().getIsOperating() && getSpeedometer() > 0) {
            setSpeedometer(0);
             System.out.println("The vehicle has skidded to a stop. \n Speedometer: " + getSpeedometer());
+            dashDisplay();
         }
 
+    }
+
+    public void dashDisplay() {
+        System.out.println(" | Speedometer: " + getSpeedometer() + " | Finish: " + getFinishDistance() + " | Traveled: " + getDistanceTraveled() + " | Time: " + getTimer());
     }
 
     public String toString() {
