@@ -26,11 +26,6 @@ public class Car extends Vehicle {
             dashDisplay();
 
         }
-//        else if (getSpeedometer() >= getMaxSpeed()) {
-//            setDistanceTraveled(getDistanceTraveled() + getSpeedometer());
-//            System.out.println("\n The vehicle is at its max speed...");
-//            dashDisplay();
-//        }
 
     }
 
@@ -50,9 +45,6 @@ public class Car extends Vehicle {
             dashDisplay();
         } else if (getSpeedometer() <= 0) {
             System.out.println("The vehicle is stopped...");
-            dashDisplay();
-        } else {
-            System.out.println("The engine needs to be running to accelerate. Please start vehicle first.");
             dashDisplay();
         }
     }
